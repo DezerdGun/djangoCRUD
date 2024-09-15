@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Item List</title></head>
+<body>
+    <h1>Item List</h1>
+    <a href="{% url 'item_create' %}">Add New Item</a>
+    <ul>
+        {% for item in items %}
+            <li>
+                <a href="{% url 'item_detail' item.pk %}">{{ item.name }}</a> - 
+                <a href="{% url 'item_update' item.pk %}">Edit</a> - 
+                <a href="{% url 'item_delete' item.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+{% comment %} https://chatgpt.com/c/66e72f25-6f94-8004-80f1-91d5d2338dd6 {% endcomment %}
